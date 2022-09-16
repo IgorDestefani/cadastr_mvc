@@ -284,7 +284,7 @@ begin
     QRY.Params[1].DataType := ftString;
     QRY.Params[2].DataType := ftString;
     QRY.Params[3].DataType := ftString;
-    QRY.Params[3].DataType := ftDate;
+    QRY.Params[4].DataType := ftDate;
 
     try
       while Qtde > 0 do

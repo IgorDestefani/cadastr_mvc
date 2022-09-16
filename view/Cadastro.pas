@@ -52,7 +52,6 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
   private
- //   FDM: TDataModule1;
     FIDPessoa: Integer;
     FIDEndereco: Integer;
     FEditar: Boolean;
