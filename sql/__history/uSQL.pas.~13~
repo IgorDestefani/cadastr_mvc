@@ -1,0 +1,44 @@
+unit uSQL;
+
+interface
+
+type
+  TSQL = class
+    public
+      function RetornarSQLInsertPessoa: String;
+      function RetornarSQLInsertEndereco: String;
+      function RetornarSQLInsertEnderecoIntegracao: String;
+  end;
+
+implementation
+
+{ TSQL }
+
+function TSQL.RetornarSQLInsertEndereco: String;
+const
+  SQL = ' INSERT INTO public.endereco( ' +
+        '     idpessoa, dscep) ' +
+	      '     VALUES (?, ?) returning idendereco;';
+begin
+  Result := SQL;
+end;
+
+function TSQL.RetornarSQLInsertEnderecoIntegracao: String;
+const
+  SQL = ' INSERT INTO public.endereco_integracao( ' +
+	      '     idendereco, dsuf, nmcidade, nmbairro, nmlogradouro, dscomplemento) ' +
+	      '     VALUES (?, ?, ?, ?, ?, ?); ';
+begin
+  Result := SQL;
+end;
+
+function TSQL.RetornarSQLInsertPessoa: String;
+const
+  SQL = ' INSERT INTO public.pessoa( ' +
+	      '    flnatureza, dsdocumento, nmprimeiro, nmsegundo, dtregistro) ' +
+	      '    VALUES (?, ?, ?, ?, ?) returning idpessoa;';
+begin
+  Result := SQL;
+end;
+
+end.

@@ -1,0 +1,18 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 211
+  Width = 293
+  object connection: TFDConnection
+    Params.Strings = (
+      'Database=postgres'
+      'User_Name=postgres'
+      'Password=masterkey'
+      'DriverID=PG')
+    Left = 128
+    Top = 88
+  end
+  object driver: TFDPhysPgDriverLink
+    Left = 120
+    Top = 160
+  end
+end

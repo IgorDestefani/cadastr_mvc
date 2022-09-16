@@ -1,0 +1,76 @@
+unit uPessoa;
+
+interface
+
+type
+  TPessoa = class
+  private
+    Fsobrenome: String;
+    Fnatureza: Integer;
+    Fdocumento: String;
+    Fnome: String;
+    Fdata: TDate;
+    Fpessoa_id: Integer;
+    procedure Setdata(const Value: String);
+    procedure Setdocumento(const Value: String);
+    procedure Setnatureza(const Value: Integer);
+    procedure Setnome(const Value: String);
+    procedure Setsobrenome(const Value: String);
+    procedure Setpessoa_id(const Value: Integer);
+  public
+    property pessoa_id: Integer read Fpessoa_id write Setpessoa_id;
+    property natureza: Integer read Fnatureza write Setnatureza;
+    property documento: String read Fdocumento write Setdocumento;
+    property nome: String read Fnome write Setnome;
+    property sobrenome: String read Fsobrenome write Setsobrenome;
+    property data: String read Fdata write Setdata;
+    constructor create;
+    destructor destroy; override;
+  end;
+
+implementation
+
+{ TPessoa }
+
+constructor TPessoa.create;
+begin
+
+end;
+
+destructor TPessoa.destroy;
+begin
+
+  inherited;
+end;
+
+procedure TPessoa.Setdata(const Value: String);
+begin
+  Fdata := Value;
+end;
+
+procedure TPessoa.Setdocumento(const Value: String);
+begin
+  Fdocumento := Value;
+end;
+
+procedure TPessoa.Setnatureza(const Value: Integer);
+begin
+  Fnatureza := Value;
+end;
+
+procedure TPessoa.Setnome(const Value: String);
+begin
+  Fnome := Value;
+end;
+
+procedure TPessoa.Setpessoa_id(const Value: Integer);
+begin
+  Fpessoa_id := Value;
+end;
+
+procedure TPessoa.Setsobrenome(const Value: String);
+begin
+  Fsobrenome := Value;
+end;
+
+end.

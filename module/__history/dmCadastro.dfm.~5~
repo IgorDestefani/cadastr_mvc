@@ -1,0 +1,9 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 211
+  Width = 293
+  object connection: TFDConnection
+    Left = 128
+    Top = 88
+  end
+end

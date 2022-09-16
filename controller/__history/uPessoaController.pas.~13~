@@ -1,0 +1,50 @@
+unit uPessoaController;
+
+interface
+
+uses
+  uPessoaModel, System.SysUtils, FireDAC.Comp.Client;
+
+type
+  TPessoaController = class
+  private
+    FPessoaModel: TPessoaModel;
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    function Gravar: Integer;
+    function GravarLote(Qtde: Integer): Boolean;
+
+    property Pessoa: TPessoaModel read FPessoa write FPessoa;
+  end;
+
+implementation
+
+{ TEnderecoController }
+
+
+constructor TPessoaController.Create;
+begin
+  FPessoaModel := TPessoaModel.Create;
+end;
+
+destructor TPessoaController.Destroy;
+begin
+  FPessoaModel.Free;
+
+  inherited;
+end;
+
+function TPessoaController.Gravar: Integer;
+begin
+  Result := FPessoaModel.Gravar;
+end;
+
+function TPessoaController.GravarLote(Qtde: Integer): Boolean;
+begin
+  Result := FPessoaModel.GravarLote(Qtde);
+end;
+
+end.
